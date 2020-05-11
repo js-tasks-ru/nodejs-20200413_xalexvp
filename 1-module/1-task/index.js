@@ -1,23 +1,23 @@
 const intervalId = setInterval(() => {
-  console.log('James'); // 1, 5
+  console.log('James');
 }, 10);
 
 setTimeout(() => {
   const promise = new Promise((resolve) => {
-    console.log('Richard'); // 3 (2)
+    console.log('Richard');
     resolve('Robert');
   });
 
   promise
       .then((value) => {
-        console.log(value); // 4
+        console.log(value);
 
         setTimeout(() => {
-          console.log('Michael'); // 6
+          console.log('Michael');
 
           clearInterval(intervalId);
         }, 10);
       });
 
-  console.log('John'); // 2 (3)
+  console.log('John');
 }, 10);
